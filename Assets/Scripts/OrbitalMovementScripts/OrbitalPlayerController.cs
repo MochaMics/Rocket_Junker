@@ -59,13 +59,13 @@ public class OrbitalPlayerController : MonoBehaviour
 			onGround = true;
 			Debug.Log("on ground");
 		}
-		else
+		/*else
 		{
 			onGround = false;
 			Debug.Log("not on ground");
 		}
 
-		Debug.Log("hi");
+		Debug.Log("hi");*/
 	}
 
 	void Update()
