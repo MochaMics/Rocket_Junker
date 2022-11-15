@@ -112,6 +112,8 @@ public class OrbitalPlayerController : MonoBehaviour
 	{
 		if (gameManager.gameOver == true)
 		{
+			_animator.SetFloat("Speed", 0);
+			_animator.SetFloat("MotionSpeed", 0);
 			return;
 		}
 		
