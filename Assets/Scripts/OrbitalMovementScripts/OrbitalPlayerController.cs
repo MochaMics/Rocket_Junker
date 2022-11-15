@@ -19,13 +19,18 @@ public class OrbitalPlayerController : MonoBehaviour
 
 	public GameManager gameManager;
 
-	//public float sphereRadius;
+
+	//Sound and Music
+	public AudioClip jumpSound;
+	private AudioSource asPlayer;
+
 
 	void Start()
 	{
 		_input = GetComponent<StarterAssets.StarterAssetsInputs>();
 
 		_animator = GetComponent<Animator>();
+		asPlayer = GetComponent<AudioSource>();
 
 
 		//gameManager = Find.GetComponent<GameManager>();
@@ -57,7 +62,7 @@ public class OrbitalPlayerController : MonoBehaviour
 		{
 			jumpForce = 0;
 			onGround = true;
-			Debug.Log("on ground");
+			//Debug.Log("on ground");
 		}
 		/*else
 		{
@@ -89,7 +94,8 @@ public class OrbitalPlayerController : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space) && onGround == true)
         {
 			jumpForce += 20f;
-			Debug.Log("we up");
+			asPlayer.PlayOneShot(jumpSound, 1.0f);
+			//Debug.Log("we up");
 			onGround = false;
         }
 
@@ -102,7 +108,7 @@ public class OrbitalPlayerController : MonoBehaviour
 
 		//Vector3 jumpMagnitude = new Vector3(0, jumpForce, 0);
 
-		Debug.Log(moveMagnitude);
+		//Debug.Log(moveMagnitude);
 
 		_animator.SetFloat("Speed", moveMagnitude * 4);
 		_animator.SetFloat("MotionSpeed", moveMagnitude);
