@@ -36,25 +36,7 @@ public class OrbitalPlayerController : MonoBehaviour
 		//gameManager = Find.GetComponent<GameManager>();
 		//gameManager = GetComponent<GameManager>();
 	}
-	/*
-	void OnCollisionEnter(Collider col)
-	{
-		
-		if (col.CompareTag("Terrain"))
-		{
-			onGround = true;
-			Debug.Log("on ground");
-        }
-        else
-        {
-			onGround = false;
-			Debug.Log("not on ground");
-        }
-		
 
-		Debug.Log("hi");
-	}
-	*/
 
 	void OnCollisionEnter(Collision toucher)
 	{
@@ -64,13 +46,13 @@ public class OrbitalPlayerController : MonoBehaviour
 			onGround = true;
 			//Debug.Log("on ground");
 		}
-		/*else
-		{
-			onGround = false;
-			Debug.Log("not on ground");
-		}
 
-		Debug.Log("hi");*/
+		if (toucher.gameObject.tag == "SpeedBoost")
+		{
+			moveSpeed = moveSpeed*2;
+			
+		}
+		
 	}
 
 	void Update()

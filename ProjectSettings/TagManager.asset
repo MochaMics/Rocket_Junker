@@ -7,14 +7,16 @@ TagManager:
   - CinemachineTarget
   - RocketPiece
   - Terrain
+  - SpeedBoost
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         if (rocketsInInventory >= rocketWin)
         {
             gameOver = true;
+            Time.timeScale = 0.0f; //freezes everything literally
         }
     }
 
